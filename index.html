@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cooper | Portfolio</title>
+    <title>Cooper | Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Header & Navigation -->
     <header>
-        <nav>
-            <h1>Cooper</h1>
-            <ul>
+        <nav class="container">
+            <a href="#" class="logo">Cooper<span>.</span></a>
+            <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -18,33 +20,154 @@
         </nav>
     </header>
 
-    <section id="hero">
-        <h2>Hi, I'm Cooper 👋</h2>
-        <p>Developer & Problem Solver</p>
-    </section>
+    <main class="container">
+        <!-- Hero Section -->
+        <section id="hero">
+            <p class="tagline">Hello, I'm</p>
+            <h1>Cooper</h1>
+            <h2>I build clean, functional web applications.</h2>
+            <p class="bio-short">Specializing in front-end development, API integrations, and intuitive UI design. Explore some of my work below.</p>
+        </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Brief summary about your skills, background, and goals.</p>
-    </section>
+        <!-- About Section -->
+        <section id="about">
+            <h3 class="section-title">About Me</h3>
+            <p>I am a developer focused on crafting fast, accessible, and clean digital experiences. I enjoy solving complex technical problems and transforming ideas into functional software.</p>
+            <div class="skills">
+                <span class="skill-tag">HTML5 / CSS3</span>
+                <span class="skill-tag">JavaScript (ES6+)</span>
+                <span class="skill-tag">Git & GitHub</span>
+                <span class="skill-tag">REST APIs</span>
+            </div>
+        </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>Project Title</h3>
-            <p>Short description of what you built and the tools used.</p>
-            <a href="#" target="_blank">View Code</a>
-        </div>
-    </section>
+        <!-- Projects Section -->
+        <section id="projects">
+            <h3 class="section-title">Featured Projects</h3>
+            <p class="section-subtitle">Click any project to view details, architecture, and live links.</p>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Reach out via <a href="mailto:your-email@example.com">Email</a> or <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>.</p>
-    </section>
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card" onclick="openModal('modal1')">
+                    <div class="card-header">
+                        <h4>Portfolio Website</h4>
+                        <span class="view-btn">Details &rarr;</span>
+                    </div>
+                    <p class="card-desc">A lightweight, minimal dark-mode developer portfolio built with semantic HTML & CSS.</p>
+                    <div class="card-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card" onclick="openModal('modal2')">
+                    <div class="card-header">
+                        <h4>Task Dashboard</h4>
+                        <span class="view-btn">Details &rarr;</span>
+                    </div>
+                    <p class="card-desc">Interactive task tracking web app featuring drag-and-drop capability and local storage persistence.</p>
+                    <div class="card-tags">
+                        <span>JavaScript</span>
+                        <span>CSS Grid</span>
+                        <span>Web Storage</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card" onclick="openModal('modal3')">
+                    <div class="card-header">
+                        <h4>Weather Tracker App</h4>
+                        <span class="view-btn">Details &rarr;</span>
+                    </div>
+                    <p class="card-desc">Real-time weather dashboard rendering 5-day forecasts via OpenWeather API integration.</p>
+                    <div class="card-tags">
+                        <span>JavaScript</span>
+                        <span>REST API</span>
+                        <span>Async/Await</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h3 class="section-title">Get In Touch</h3>
+            <p>I'm currently open to new projects and opportunities. Feel free to reach out!</p>
+            <div class="contact-links">
+                <a href="mailto:cooper@example.com" class="btn">Send Email</a>
+                <a href="https://github.com/coops4474" target="_blank" rel="noopener" class="btn btn-outline">GitHub Profile</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Cooper. Built with HTML & CSS.</p>
+        <div class="container">
+            <p>&copy; 2026 Cooper. Designed with simplicity in mind.</p>
+        </div>
     </footer>
+
+    <!-- Modals for Project Details -->
+    <div id="modal1" class="modal" onclick="closeModalOnOuterClick(event, 'modal1')">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+            <h3>Portfolio Website</h3>
+            <p class="modal-tech">Built with: HTML5, CSS3, Modern JavaScript</p>
+            <hr>
+            <p><strong>Overview:</strong> A custom portfolio site designed without heavy frameworks to ensure optimal performance, accessible navigation, and responsive scaling across mobile and desktop devices.</p>
+            <p><strong>Key Features:</strong></p>
+            <ul>
+                <li>Custom CSS variables for easy dark-mode customization</li>
+                <li>Pure JavaScript modal component for zero-dependency overlays</li>
+                <li>Hosted on GitHub Pages</li>
+            </ul>
+            <div class="modal-actions">
+                <a href="https://github.com/coops4474/cooper-portfolio" target="_blank" class="btn">View Source Code</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal" onclick="closeModalOnOuterClick(event, 'modal2')">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
+            <h3>Task Dashboard</h3>
+            <p class="modal-tech">Built with: Vanilla JS, HTML5, CSS Flexbox</p>
+            <hr>
+            <p><strong>Overview:</strong> A productive web tool that allows users to create, organize, and categorize daily tasks without needing an account setup.</p>
+            <p><strong>Key Features:</strong></p>
+            <ul>
+                <li>Persistent data storage using browser `localStorage`</li>
+                <li>Dynamic task filtering by status (Pending, Completed)</li>
+                <li>Clean drag-and-drop interactive UI</li>
+            </ul>
+            <div class="modal-actions">
+                <a href="#" target="_blank" class="btn">Live Demo</a>
+                <a href="#" target="_blank" class="btn btn-outline">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal" onclick="closeModalOnOuterClick(event, 'modal3')">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal3')">&times;</span>
+            <h3>Weather Tracker App</h3>
+            <p class="modal-tech">Built with: JavaScript (Fetch API), OpenWeather REST API</p>
+            <hr>
+            <p><strong>Overview:</strong> A responsive weather web application fetching live atmospheric metrics, humidity, and temperature data based on user input or browser geolocation.</p>
+            <p><strong>Key Features:</strong></p>
+            <ul>
+                <li>Asynchronous data fetching with graceful error handling</li>
+                <li>Dynamic background elements reacting to current weather conditions</li>
+                <li>Search history storage</li>
+            </ul>
+            <div class="modal-actions">
+                <a href="#" target="_blank" class="btn">Live Demo</a>
+                <a href="#" target="_blank" class="btn btn-outline">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
